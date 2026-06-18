@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenNotebook Clipper</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <section id="clipperView" class="view">
+        <header class="header">
+          <div class="brand-lockup">
+            <img src="icons/icon48.png" alt="" width="28" height="28">
+            <h1><span>Open</span>Notebook Clipper</h1>
+          </div>
+          <button id="openSettingsButton" class="icon-button" type="button" aria-label="Open settings" title="Settings">
+            <span aria-hidden="true">⚙</span>
+          </button>
+        </header>
+
+        <div class="page-preview" aria-live="polite">
+          <div class="field-block">
+            <label>Current page title</label>
+            <p id="pageTitle" class="truncate">Loading current tab...</p>
+          </div>
+          <div class="field-block">
+            <label>Current page URL</label>
+            <p id="pageUrl" class="url-preview">Loading current tab...</p>
+          </div>
+        </div>
+
+        <div class="field-block">
+          <div class="field-row">
+            <label for="notebookSelect">Notebook</label>
+            <button id="refreshNotebooksButton" class="link-button" type="button">Refresh</button>
+          </div>
+          <select id="notebookSelect">
+            <option value="">Loading notebooks...</option>
+          </select>
+        </div>
+
+        <button id="saveButton" class="primary-button" type="button">Save to OpenNotebook</button>
+        <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="settingsView" class="view hidden">
+        <header class="header">
+          <button id="backButton" class="text-button" type="button">Back</button>
+          <h1>Settings</h1>
+        </header>
+
+        <div class="field-block">
+          <label for="apiUrlInput">Open Notebook API URL</label>
+          <input id="apiUrlInput" type="url" inputmode="url" placeholder="http://localhost:5055" autocomplete="off">
+        </div>
+
+        <div class="field-block">
+          <label for="tokenInput">Password/API token</label>
+          <input id="tokenInput" type="password" autocomplete="current-password">
+        </div>
+
+        <div class="button-row">
+          <button id="saveSettingsButton" class="primary-button" type="button">Save settings</button>
+          <button id="testConnectionButton" class="secondary-button" type="button">Test connection</button>
+        </div>
+
+        <p id="settingsStatusMessage" class="status" role="status" aria-live="polite"></p>
+        <p class="support-link">
+          Enjoying the extension?
+          <a href="https://buy.stripe.com/bJebJ3cc7epD40V2ec4wM00" target="_blank" rel="noopener noreferrer">Buy me a coffee</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="permissions.js"></script>
+    <script src="api.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
