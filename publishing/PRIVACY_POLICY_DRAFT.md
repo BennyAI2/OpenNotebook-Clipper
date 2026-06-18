@@ -1,4 +1,4 @@
-# OpenNotebook Clipper Privacy Policy Draft
+# OpenNotebook Clipper Privacy Policy 
 
 Last updated: 2026-06-18
 
